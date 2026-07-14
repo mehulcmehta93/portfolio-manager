@@ -43,4 +43,10 @@ public class PortfolioController {
        return portfolio;
     }
 
+    @DeleteMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePortfolio(@PathVariable Long id){
+        portfolioService.deletePortfolio(id);
+    }
+
     }

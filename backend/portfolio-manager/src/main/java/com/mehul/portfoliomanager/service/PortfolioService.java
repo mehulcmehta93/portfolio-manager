@@ -36,4 +36,12 @@ public class PortfolioService {
         return Optional.of(portfolioRepository.findById(id)
                 .orElseThrow(() -> new PortfolioNotFoundException(id)));
     }
+
+    public void deletePortfolio(Long id){
+
+        Portfolio portfolio = portfolioRepository.findById(id)
+                .orElseThrow(() -> new PortfolioNotFoundException(id));
+
+        portfolioRepository.delete(portfolio);
+    }
 }
